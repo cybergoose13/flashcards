@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Cards</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="landing">
+        <div>
+            <h1 class="title">Flash Cards</h1>
+        </div>
+
+        <div class="landing-table">
+
+            <div class="new-deck">
+                <h3>New Deck</h3>
+                <a href="new">New Deck</a>
+            </div>
+
+            <div class="available-deck">
+                <h3>Exisiting Deck</h3>
+                <a href="available">Existing Deck</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

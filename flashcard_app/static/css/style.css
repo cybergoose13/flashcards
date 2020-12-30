@@ -1,0 +1,16 @@
+.title{
+    text-align: center;
+}
+
+.landing-table{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.new-deck{
+    width: 100%;
+}
+
+.available-deck{
+    width: 100%;
+}
