@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catagories</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/catagories.css' %}">
+</head>
+<body>
+    <div>
+        {% if cards == null %}
+        <h1>Nothing available</h1>
+        {% else %}
+        {% for cat, v in card_dict.items %}
+        <a href="">{{cat|title}}</a>
+        <p style="margin-left:50px;">- {{v}}</p>
+        {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
