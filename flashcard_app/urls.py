@@ -6,5 +6,6 @@ urlpatterns = [
     path('new', views.newCard),
     path('addcard', views.addCard),
     path('catagories', views.catagories),
+    path('card', views.card),
     path('test', views.test)
 ]

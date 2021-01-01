@@ -10,14 +10,21 @@ def newCard(request):
     return render(request, 'newCard.html')
 
 def addCard(request):
+    catagory= request.POST['catagory']
+    question= request.POST['question']
+    answer= request.POST['answer']
+    wrong1= request.POST['wrong_one']
+    wrong2= request.POST['wrong_two']
+    wrong3= request.POST['wrong_three']
+    creator= request.POST['creator']
     card= Card.objects.create(
-        catagory= request.POST['catagory'],
-        question= request.POST['question'],
-        answer= request.POST['answer'],
-        wrong_one= request.POST['wrong_one'],
-        wrong_two= request.POST['wrong_two'],
-        wrong_three= request.POST['wrong_three'],
-        created_by= request.POST['creator']
+        catagory= str(catagory).lower,
+        question= str(question).lower,
+        answer= str(answer).lower,
+        wrong_one= str(wrong1).lower,
+        wrong_two= str(wrong2).lower,
+        wrong_three= str(wrong3).lower,
+        created_by= str(creator).lower
     )
     return redirect(catagories)
 
@@ -41,6 +48,10 @@ def catagories(request):
         }
         return render(request, 'catagories.html', context)
     return render(request, 'catagories.html')
+
+
+def card(request):
+    return render(request, 'card.html')
 
 #   for testing only
 def test(request):

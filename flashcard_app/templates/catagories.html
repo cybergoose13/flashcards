@@ -9,12 +9,15 @@
 </head>
 <body>
     <div>
+        <h3>Catagories<span><a href="/">Home</a></span></h3>
+    </div>
+    <div>
         {% if cards == null %}
         <h1>Nothing available</h1>
         {% else %}
         {% for cat, v in card_dict.items %}
         <a href="">{{cat|title}}</a>
-        <p style="margin-left:50px;">- {{v}}</p>
+        <p style="margin-left:50px;"># {{v}}</p>
         {% endfor %}
         {% endif %}
     </div>
