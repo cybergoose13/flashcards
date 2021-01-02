@@ -16,7 +16,7 @@
         <h1>Nothing available</h1>
         {% else %}
         {% for cat, v in card_dict.items %}
-        <a href="">{{cat|title}}</a>
+        <a href="card/{{cat}}">{{cat|title}}</a>
         <p style="margin-left:50px;"># {{v}}</p>
         {% endfor %}
         {% endif %}

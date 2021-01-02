@@ -10,25 +10,32 @@ def newCard(request):
     return render(request, 'newCard.html')
 
 def addCard(request):
-    catagory= request.POST['catagory']
+    category= request.POST['catagory']
     question= request.POST['question']
     answer= request.POST['answer']
     wrong1= request.POST['wrong_one']
     wrong2= request.POST['wrong_two']
     wrong3= request.POST['wrong_three']
     creator= request.POST['creator']
-    card= Card.objects.create(
-        catagory= str(catagory).lower,
-        question= str(question).lower,
-        answer= str(answer).lower,
-        wrong_one= str(wrong1).lower,
-        wrong_two= str(wrong2).lower,
-        wrong_three= str(wrong3).lower,
-        created_by= str(creator).lower
+    category= str(category).lower()
+    question= str(question).lower()
+    answer= str(answer).lower()
+    wrong1= str(wrong1).lower()
+    wrong2= str(wrong2).lower()
+    wrong3= str(wrong3).lower()
+    creator= str(creator).lower()
+    Card.objects.create(
+        catagory= category,
+        question= question,
+        answer= answer,
+        wrong_one= wrong1,
+        wrong_two= wrong2,
+        wrong_three= wrong3,
+        created_by= creator
     )
-    return redirect(catagories)
+    return redirect(categories)
 
-def catagories(request):
+def categories(request):
     cards= Card.objects.all()
     if len(cards) > 0:
         cardSet= set()
@@ -43,15 +50,21 @@ def catagories(request):
             print(cat)
         context= {
             'cards': cards,
-            'catagories': cardSet,
+            'categories': cardSet,
             'card_dict': card_dict
         }
-        return render(request, 'catagories.html', context)
-    return render(request, 'catagories.html')
+        return render(request, 'categories.html', context)
+    return render(request, 'categories.html')
 
 
-def card(request):
-    return render(request, 'card.html')
+def card(request, category_id):
+
+    cards= Card.objects.filter(catagory= category_id)
+    context= {
+        'cards': cards
+    }
+    print(len(cards))
+    return render(request, 'card.html', context)
 
 #   for testing only
 def test(request):

@@ -5,7 +5,7 @@ urlpatterns = [
     path('', views.index),
     path('new', views.newCard),
     path('addcard', views.addCard),
-    path('catagories', views.catagories),
-    path('card', views.card),
+    path('categories', views.categories),
+    path('card/<str:category_id>', views.card),
     path('test', views.test)
 ]
