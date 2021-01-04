@@ -6,17 +6,26 @@
     <title>Card</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/card.css' %}">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- creates const with value of the passed in context from views -->
     <script>
-        console.log("{{cards|safe}}")
+        var deck = "{{cards.items|safe}}"
+        // deck= JSON.parse(deck)
+        // console.log("{{cards|safe}}")
         // const deck= "{{cards.0.id|safe}}"
     </script>
     <script type="text/javascript" src="{% static 'js/card.js' %}"></script>
 </head>
 <body>
     <div>
-        <h1>{{cards.0.question}}</h1>
+        <ul>
+            {% for key, value in cards.items %}
+            <li>
+                <h1>{{value}}</h1>
+                <h2>{{key}}</h2>
+            </li>
+            {% endfor %}
+        </ul>
     </div>
 </body>
 </html>

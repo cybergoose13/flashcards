@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from flashcard_app.models import *
 
@@ -60,12 +61,22 @@ def categories(request):
 def card(request, category_id):
 
     cards= Card.objects.filter(catagory= category_id)
+    context_cards = {}
+
+    for card in cards:
+        context_cards.update({card.id:card.question})
+    print(context_cards)
     context= {
-        'cards': cards
+        "cards": context_cards
     }
-    print(len(cards))
+    print(context)
     return render(request, 'card.html', context)
 
 #   for testing only
 def test(request):
-    return render(request, 'test.html')
+    print("*"*20)
+    print("TEST has been called. . . .")
+    data={
+        "mTest": "TEST"
+    }
+    return JsonResponse(data)
