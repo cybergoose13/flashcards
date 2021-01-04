@@ -34,7 +34,6 @@ def categories(request):
         card_dict= {}
         for cat in cardSet:
             card_update= {cat : Card.objects.filter(category=cat).count()}
-            # card_dict[cat]= Card.objects.filter(catagory=cat).count()
             card_dict.update(card_update)
             print(cat)
         context= {
