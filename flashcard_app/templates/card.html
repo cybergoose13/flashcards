@@ -7,7 +7,12 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/card.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <!-- creates const with value of the passed in context from views -->
+    <script>
+        const cat= "{{deck_cat}}"
+    </script>
+
     <script type="text/javascript" src="{% static 'js/card.js' %}"></script>
 </head>
 <body>
@@ -15,14 +20,9 @@
         <div>
             <h1>Card Quiz <span><a href="/">Home</a></span></h1>
         </div>
-        <ul>
-            {% for key, value in cards.items %}
-            <li>
-                <h1>{{value}}</h1>
-                <h2>{{key}}</h2>
-            </li>
-            {% endfor %}
-        </ul>
+        <div>
+            <h1 id="h1_question"></h1>
+        </div>
     </div>
 </body>
 </html>

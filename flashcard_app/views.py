@@ -55,10 +55,28 @@ def card(request, category_id):
         context_cards.update({card.id:card.question})
     print(context_cards)
     context= {
-        "cards": context_cards
+        "cards": context_cards,
+        "deck_cat": category_id
     }
     # print(context)
     return render(request, 'card.html', context)
+
+def getCategoryCards(request, category_id):
+    cards= Card.objects.filter(category= category_id)
+    deck= {}
+    counter = 0;
+    for card in cards:
+        card_obj= {
+                counter : {
+                    "id" : card.id,
+                    "question" : card.question,
+                    "answer" : card.answer
+                    }
+        }
+        deck.update(card_obj)
+        counter+=1;
+    
+    return JsonResponse(deck)
 
 #   for testing only
 def test(request):
