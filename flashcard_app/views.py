@@ -11,28 +11,16 @@ def newCard(request):
     return render(request, 'newCard.html')
 
 def addCard(request):
-    category= request.POST['catagory']
+    category= request.POST['category']
     question= request.POST['question']
     answer= request.POST['answer']
-    wrong1= request.POST['wrong_one']
-    wrong2= request.POST['wrong_two']
-    wrong3= request.POST['wrong_three']
-    creator= request.POST['creator']
     category= str(category).lower()
     question= str(question).lower()
     answer= str(answer).lower()
-    wrong1= str(wrong1).lower()
-    wrong2= str(wrong2).lower()
-    wrong3= str(wrong3).lower()
-    creator= str(creator).lower()
     Card.objects.create(
-        catagory= category,
+        category= category,
         question= question,
-        answer= answer,
-        wrong_one= wrong1,
-        wrong_two= wrong2,
-        wrong_three= wrong3,
-        created_by= creator
+        answer= answer
     )
     return redirect(categories)
 
@@ -41,11 +29,11 @@ def categories(request):
     if len(cards) > 0:
         cardSet= set()
         for card in cards:
-            cardSet.add(card.catagory)
+            cardSet.add(card.category)
         
         card_dict= {}
         for cat in cardSet:
-            card_update= {cat : Card.objects.filter(catagory=cat).count()}
+            card_update= {cat : Card.objects.filter(category=cat).count()}
             # card_dict[cat]= Card.objects.filter(catagory=cat).count()
             card_dict.update(card_update)
             print(cat)
@@ -60,7 +48,7 @@ def categories(request):
 
 def card(request, category_id):
 
-    cards= Card.objects.filter(catagory= category_id)
+    cards= Card.objects.filter(category= category_id)
     context_cards = {}
 
     for card in cards:
@@ -69,14 +57,12 @@ def card(request, category_id):
     context= {
         "cards": context_cards
     }
-    print(context)
+    # print(context)
     return render(request, 'card.html', context)
 
 #   for testing only
 def test(request):
     print("*"*20)
-    print("TEST has been called. . . .")
-    data={
-        "mTest": "TEST"
-    }
-    return JsonResponse(data)
+    print("TEST")
+    print("*"*20)
+    return JsonResponse({"mtest" : "TEST"})
