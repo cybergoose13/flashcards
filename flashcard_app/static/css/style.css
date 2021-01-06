@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+
 html, body{
     display: grid;
     margin: 0 auto;
@@ -10,12 +12,14 @@ html, body{
 .landing{
     display: grid;
     grid-template-rows: 85% 15%;
+    background: linear-gradient(#e66465, #9198e5);
     /* justify-items: center; */
 }
 
 .content{
     height: 100vh;
     border: gray solid 2px;
+    box-shadow: green -5px -5px -5px ;
     position: relative;
 }
 
@@ -33,6 +37,7 @@ html, body{
 
 .title > h1{
     text-align: center;
+    font-family: 'Lato', sans-serif;
 }
 
 .landing-table{
@@ -50,8 +55,10 @@ html, body{
 }
 
 .box{
+    background: white;
+    opacity: 1;
     border: black 1px solid;
-    border-radius: 3%;
+    border-radius: 5%;
     box-shadow: gray 5px 5px 1px;
     padding: 3%;
     margin: 10px;
