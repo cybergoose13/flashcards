@@ -12,26 +12,31 @@
     <div class="container">
         <div class="header">
             <h1>Create A New Card</h1>
-            <a href="/">Home</a>
         </div>
         <div>
             <form action="addcard" method="post">
+                {% csrf_token %}
                 <div class="form-group">
-                    {% csrf_token %}
-                    <label for="category">Category</label>
-                    <input type="text" name="category" id="category-input">
-                    <br>
-    
-                    <label for="question">Question</label>
-                    <input type="text" name="question" id="question-input">
-                    <br>
-    
-                    <label for="answer">Answer</label>
-                    <input type="text" name="answer" id="answer-input">
-                    <br>
-    
-                    <input type="submit" value="Add Card">
+                    <label class="" for="category">Category</label>
+                    <input type="text" name="category" placeholder="Enter Category" 
+                        id="category-input">
                 </div>
+
+                <div class="form-group">
+                    <label class="" for="question">Question</label>
+                    <input type="text" name="question" placeholder="Enter Question"
+                        id="question-input">
+                </div>
+
+                <div class="form-group">
+                    <label class="" for="answer">Answer</label>
+                    <input type="text" name="answer" placeholder="Enter Answer"
+                        id="answer-input">
+                </div>
+                    <input class="btn btn-success" type="submit" value="Add Card">
+                    <a href="/">
+                        <button class="btn btn-danger" type="button">Go Back</button>
+                    </a>
             </form>
         </div>
     </div>

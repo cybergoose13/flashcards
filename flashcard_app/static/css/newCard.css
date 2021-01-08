@@ -4,18 +4,59 @@
 }
 
 html body {
+  background: black;
   margin: 0 auto;
   padding: 0;
   height: 100vh;
   width: 100vw;
 }
 
+form {
+  margin: 0 auto;
+  width: 300px;
+  background: whitesmoke;
+  border-radius: 2%;
+  padding: 20px;
+  box-shadow: 5px 5px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+label {
+  font-family: Lato, sans-serif;
+  text-decoration: underline;
+  font-size: 1.2em;
+}
+
 input[type=text] {
   width: 100%;
+  margin-bottom: 5px;
+}
+
+.container {
+  display: grid;
+  grid-auto-rows: 10% 90%;
+  height: 100vh;
+  width: 100vw;
+  background: #ffffff;
+  background: linear-gradient(320deg, whitesmoke 5%, #4ba379 100%);
 }
 
 .header {
-  width: 100vw;
+  margin: 5% 0 auto;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.header > h1 {
+  font-family: Lato, sans-serif;
+  font-weight: 900;
+  font-size: 2em;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 1px;
+}
+
+.btn {
+  margin: 5px 5%;
 }
 
 /*# sourceMappingURL=newCard.css.map */
