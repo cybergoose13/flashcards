@@ -1,5 +1,6 @@
 from django.http.response import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from flashcard_app.models import *
 
 # Create your views here.
@@ -11,6 +12,13 @@ def newCard(request):
     return render(request, 'newCard.html')
 
 def addCard(request):
+    if len(request.POST) < 1:
+        return redirect('/new')
+    errors= Card.objects.card_validator(request.POST)
+    if len(errors) > 0 :
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect('/new')
     category= request.POST['category']
     question= request.POST['question']
     answer= request.POST['answer']
