@@ -54,9 +54,28 @@ html body
     flex: 1 1 300px
     flex: 0 1 300px
 
+    animation: wiggle 2s infinite
+
 .box > h3
     font-family: Lato, sans-serif
     font-weight: 400
     font-size: 2em
     color: black
     text-shadow: green 1px 1px
+
+@keyframes wiggle
+    0%
+        transform: rotate(0deg)
+    5%
+        transform: rotate(-2deg)
+    10%
+        transform: rotate(2deg)
+    15%
+        transform: rotate(-2deg)
+    20%
+        transform: rotate(2deg)
+    25%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(0deg)
+        
