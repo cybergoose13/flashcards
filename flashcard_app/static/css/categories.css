@@ -1,28 +1,66 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400;1,900&display=swap");
-* {
-  overflow: hidden;
-}
-
 html body {
   margin: 0 auto;
   padding: 0;
 }
 
 .container {
+  padding-top: 0.8em;
   width: 100vw;
   height: 100vh;
-  background: #ffffff;
+  background: smokewhite;
   background: linear-gradient(320deg, whitesmoke 5%, #4ba379 100%);
 }
 
 .header {
-  margin: 2em auto;
+  margin: 0 auto;
   text-align: center;
+  height: fit-content;
 }
 
 .header > h1:not(#title) {
   font-family: "Lato", "sans-serif";
   font-size: 2.1em;
+}
+
+.cat-container {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: fit-content;
+}
+
+.cat-container > h1 {
+  font-size: 2.5em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cat-card {
+  display: grid;
+  grid-auto-rows: 70% 30%;
+  margin: 10px auto;
+  background: white;
+  opacity: 0.9;
+  text-align: center;
+  border-radius: 5%;
+  border: solid black 1px;
+  box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.6);
+  height: 150px;
+  flex: 1 1 150px;
+  flex: 0 1 150px;
+}
+
+.cat-card > h4 {
+  margin: 0.8em auto;
+  font-family: "Lato", "sans-serif";
+}
+
+.cat-card > p {
+  margin: 0 auto;
+  font-family: "Lato", "sans-serif";
+  text-align: start;
 }
 
 #title {

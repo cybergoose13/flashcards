@@ -16,13 +16,16 @@
             <h1 id="title">Flash Cards</h1>
             <h1>Categories</h1>
         </div>
-        <div>
+        <div class="cat-container">
             {% if cards == null %}
-            <h1>Nothing available</h1>
+            <h1 class="m-4">Nothing available</h1>
             {% else %}
             {% for cat, v in card_dict.items %}
-            <a href="card/{{cat}}">{{cat|title}}</a>
-            <p style="margin-left:50px;"># {{v}}</p>
+            <div class="cat-card">
+                {% comment %} <a href="card/{{cat}}">{{cat|title}}</a> {% endcomment %}
+                <h4>{{cat|title}}</h4>
+                <p style="margin-left:50px;"># of cards: {{v}}</p>
+            </div>
             {% endfor %}
             {% endif %}
         </div>
