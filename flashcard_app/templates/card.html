@@ -17,17 +17,18 @@
     <script type="text/javascript" src="{% static 'js/card.js' %}"></script>
 </head>
 <body>
-    <div>
-        <div>
-            <h1>{{deck_cat}}</h1>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Flash Cards</h1>
+            <h1 class="sub">{{deck_cat}}</h1>
         </div>
-        <div id="slider" class="swipe">
-            <div class="swipe-wrap">
-                <h1 id="h1_question"></h1>
-            </div>
-            <a href="/"><button>Home</button></a>
+
+        <div class="card-container">
+            <h1 id="h1_question"></h1>
+
+            <a href="/categories"><button>Back</button></a>
             <button id="btn_next">Next Card</button>
-          </div>
+        </div>
     </div>
 </body>
 </html>

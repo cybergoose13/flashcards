@@ -1,5 +1,5 @@
 let cardArr= []
-let clicks= 1;
+let clicks= 0;
 
 $(document).ready(function name(params) {
     var getUrl= "/get/card/" + cat
@@ -17,7 +17,7 @@ $(document).ready(function name(params) {
 });
 
 
-$(document).on('click', '.swipe-wrap',function (params) {
+$(document).on('click', '.card-container',function (params) {
     setCard(clicks)
 });
 

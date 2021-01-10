@@ -1,3 +1,35 @@
-h1{
-    color: red;
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400;1,900&display=swap");
+body html {
+  margin: 0 auto;
+  padding: 0;
 }
+
+.container {
+  padding-top: 0.8em;
+  width: 100vw;
+  height: 100vh;
+  background: smokewhite;
+  background: linear-gradient(320deg, whitesmoke 5%, #4ba379 100%);
+}
+
+.header {
+  margin: 0 auto;
+  text-align: center;
+  height: fit-content;
+}
+
+.header > .title {
+  font-family: "Lato", "sans-serif";
+  font-weight: 900;
+  font-size: 3em;
+  -webkit-text-stroke: white 2px;
+}
+
+.header > .sub {
+  font-family: "Lato", "sans-serif";
+  font-weight: 400;
+  font-size: 3em;
+  -webkit-text-stroke: white 1.5px;
+}
+
+/*# sourceMappingURL=card.css.map */
