@@ -10,6 +10,8 @@ body html
     width: 100vw
     height: 100vh
 
+body
+    background: black
 
 .container
     display: flex
@@ -18,7 +20,6 @@ body html
     padding-top: .8em
     height: 100vh
     width: 100%
-    background: smokewhite
     background: linear-gradient(320deg, rgba(3,4,3,1) 10%, rgba(75,163,121,1) 100%)
     // background: linear-gradient(320deg, rgba(whitesmoke, 1) 5%, rgba(75,163,121,1) 100%)
 
@@ -27,28 +28,24 @@ body html
     text-align: center
     height: fit-content
 
-
 .header > .title
     font-family: 'Lato', 'sans-serif'
     font-weight: 900
-    font-size: 3em
+    font-size: 4em
     -webkit-text-stroke: white 2px
 
 .header > .sub
     font-family: 'Lato', 'sans-serif'
-    font-weight: 400
-    font-size: 3em
-    -webkit-text-stroke: white 1.5px
+    text-decoration: underline
+    // font-weight: 400
+    // font-size: 2.1em
+    color: whitesmoke
+    // -webkit-text-stroke: black .5px
 
 .card-container
-    // border: black solid 1px
-    // border-radius: .2em
-    // opacity: .9
-    width: 95%
+    width: 90%
     height: 40vh
-    // background-color: transparent
     text-align: center
-    // box-shadow: 3px 3px 1px rgba(0, 0, 0, .6)
     margin-bottom: 8px
     perspective: 1000px
 
@@ -61,8 +58,8 @@ body html
     transform-style: preserve-3d
     box-shadow: 3px 3px 1px rgba(0, 0, 0, .6)
 
-.card-container:hover .card
-    transform: rotateY(180deg)
+// .card-container:hover .card
+//     transform: rotateY(180deg)
 
 .front, .back
     font-family: 'Lato', 'sans-serif'
@@ -75,7 +72,6 @@ body html
 
 .front
     background-color: smokewhite
-    opacity: .8
     color: black
 
 .back
@@ -88,6 +84,5 @@ body html
     top: 45%
     transform: translateY(-45%)
 
-// .button-container
-//     display: flex
-    
+.button-container
+    margin-top: 3em

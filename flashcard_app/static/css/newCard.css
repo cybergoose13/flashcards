@@ -33,11 +33,10 @@ input[type=text] {
 
 .container {
   display: grid;
-  grid-auto-rows: 10% 90%;
+  grid-auto-rows: 20% 80%;
   height: 100vh;
   width: 100vw;
-  background: #ffffff;
-  background: linear-gradient(320deg, whitesmoke 5%, #4ba379 100%);
+  background: linear-gradient(320deg, #030403 10%, #4ba379 100%);
 }
 
 .header {
@@ -45,14 +44,19 @@ input[type=text] {
   width: 100%;
   height: 100%;
   text-align: center;
+  font-family: Lato, sans-serif;
 }
 
-.header > h1 {
-  font-family: Lato, sans-serif;
+.header > #title {
   font-weight: 900;
-  font-size: 2.3em;
-  -webkit-text-stroke-color: white;
-  -webkit-text-stroke-width: 1px;
+  font-size: 4em;
+  -webkit-text-stroke: white 2px;
+}
+
+.header > #sub {
+  font-size: 2.1em;
+  color: white;
+  text-decoration: underline;
 }
 
 .button-box {

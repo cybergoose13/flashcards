@@ -6,6 +6,10 @@ body html {
   height: 100vh;
 }
 
+body {
+  background: black;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -13,7 +17,6 @@ body html {
   padding-top: 0.8em;
   height: 100vh;
   width: 100%;
-  background: smokewhite;
   background: linear-gradient(320deg, #030403 10%, #4ba379 100%);
 }
 
@@ -26,19 +29,18 @@ body html {
 .header > .title {
   font-family: "Lato", "sans-serif";
   font-weight: 900;
-  font-size: 3em;
+  font-size: 4em;
   -webkit-text-stroke: white 2px;
 }
 
 .header > .sub {
   font-family: "Lato", "sans-serif";
-  font-weight: 400;
-  font-size: 3em;
-  -webkit-text-stroke: white 1.5px;
+  text-decoration: underline;
+  color: whitesmoke;
 }
 
 .card-container {
-  width: 95%;
+  width: 90%;
   height: 40vh;
   text-align: center;
   margin-bottom: 8px;
@@ -55,10 +57,6 @@ body html {
   box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.6);
 }
 
-.card-container:hover .card {
-  transform: rotateY(180deg);
-}
-
 .front, .back {
   font-family: "Lato", "sans-serif";
   font-size: 2.1em;
@@ -71,7 +69,6 @@ body html {
 
 .front {
   background-color: smokewhite;
-  opacity: 0.8;
   color: black;
 }
 
@@ -85,6 +82,10 @@ body html {
   position: relative;
   top: 45%;
   transform: translateY(-45%);
+}
+
+.button-container {
+  margin-top: 3em;
 }
 
 /*# sourceMappingURL=card.css.map */
