@@ -19,7 +19,8 @@ body html
     height: 100vh
     width: 100%
     background: smokewhite
-    background: linear-gradient(320deg, rgba(whitesmoke, 1) 5%, rgba(75,163,121,1) 100%)
+    background: linear-gradient(320deg, rgba(3,4,3,1) 10%, rgba(75,163,121,1) 100%)
+    // background: linear-gradient(320deg, rgba(whitesmoke, 1) 5%, rgba(75,163,121,1) 100%)
 
 .header
     margin: 0 auto
@@ -43,8 +44,8 @@ body html
     // border: black solid 1px
     // border-radius: .2em
     // opacity: .9
-    width: 20em
-    height: 10em
+    width: 95%
+    height: 40vh
     // background-color: transparent
     text-align: center
     // box-shadow: 3px 3px 1px rgba(0, 0, 0, .6)
@@ -64,6 +65,8 @@ body html
     transform: rotateY(180deg)
 
 .front, .back
+    font-family: 'Lato', 'sans-serif'
+    font-size: 2.1em
     position: absolute
     width: 100%
     height: 100%
@@ -71,22 +74,20 @@ body html
     backface-visibility: hidden
 
 .front
-    background-color: #bbb
+    background-color: smokewhite
+    opacity: .8
     color: black
 
 .back
-    background-color: green
-    color: white
+    background-color: white
+    color: green
     transform: rotateY(180deg)
 
-.front > h1
-    font-size: 2em
+.front > h1 , .back > h1
     position: relative
     top: 45%
     transform: translateY(-45%)
 
-.back > h1
-    font-size: 2em
-    position: relative
-    top: 45%
-    transform: translateY(-45%)
+// .button-container
+//     display: flex
+    
