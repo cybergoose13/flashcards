@@ -16,9 +16,13 @@ $(document).ready(function name(params) {
     })
 });
 
+$(document).on('click', '.title', function (params) {
+    window.location.replace('/')
+})
 
-$(document).on('click', '.card-container',function (params) {
-    setCard(clicks)
+$(document).on('click', '.card',function (params) {
+    // setCard(clicks)
+    $('.card').css("transform", "rotateY(-180deg)")
 });
 
 $(document).on('click', '#btn_next', function (params) {
@@ -31,17 +35,29 @@ $(document).on('click', '#btn_next', function (params) {
     setQuestion(clicks)
 })
 
+$(document).on('click', '#btn_prev', function (params) {
+    if(clicks < 1){
+        clicks= cardArr.length -1
+    }else{
+        clicks -= 1
+    }
+    setQuestion(clicks)
+})
+
 function setCard(params) {
     var card_text= $('#h1_question').text()
    if(card_text === '') {
-       $('#h1_question').text(cardArr[params].question).css("color","blue")
+       $('#h1_question').text(cardArr[params].question)
+       $('#h1_answer').text(cardArr[params].answer)
    }else if(card_text  === cardArr[params].question){
-       $('#h1_question').text(cardArr[params].answer).css("color", "green")
+       $('#h1_question').text(cardArr[params].answer)
    }else{
-       $('#h1_question').text(cardArr[params].question).css("color", "blue")
+       $('#h1_question').text(cardArr[params].question)
+       $('#h1_answer').text(cardArr[params])
    }
 }
 
 function setQuestion(params){
     $('#h1_question').text(cardArr[params].question).css("color", "blue")
+    $('#h1_answer').text(cardArr[params].answer)
 }
