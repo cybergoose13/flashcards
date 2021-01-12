@@ -76,9 +76,6 @@ def adLogin(request):
     hash= bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt()).decode()
     if bcrypt.checkpw('root'.encode(), hash.encode()):
         request.session['sesh']= hash
-        print('ENCODE: ' + str(hash.encode()))
-        print('PLAIN: ' + str(hash))
-        print('In SESH: ' + str(request.session['sesh']))
         return redirect(categories)
     else:
         return redirect(login)
