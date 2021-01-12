@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 id="title">Flash Cards</h1>
+            <h3 id="sub">Login</h3>
+            <a href="/logout">Logout</a>
+        </div>
+        <div class="form-container">
+            <form action="adlogin" method="post">
+                {% csrf_token %}
+                <input type="email" name="email" id="email">
+                <input type="password" name="password" id="password">
+                <input type="submit" value="Press Me">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

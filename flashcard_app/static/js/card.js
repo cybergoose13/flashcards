@@ -1,4 +1,4 @@
-let cardArr= []
+let cardArr= [];
 let clicks= 0;
 
 $(document).ready(function name(params) {
@@ -65,17 +65,20 @@ function setCard(params) {
    if(card_text === '') {
        $('#h1_question').text(cardArr[params].question)
        $('#h1_answer').text(cardArr[params].answer)
+       $('#delete_card').attr('href', '/delete/' + cardArr[params].id)
    }else if(card_text  === cardArr[params].question){
        $('#h1_question').text(cardArr[params].answer)
    }else{
        $('#h1_question').text(cardArr[params].question)
        $('#h1_answer').text(cardArr[params])
+       $('#delete_card').attr('href', '/delete/' + cardArr[params].id)
    }
 }
 
 function setQuestion(params){
     $('#h1_question').text(cardArr[params].question)
     $('#h1_answer').text(cardArr[params].answer)
+    $('#delete_card').attr('href', '/delete/' + cardArr[params].id)
 }
 
 function getRotation(allowRotation){

@@ -2,6 +2,7 @@ from django.http.response import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from flashcard_app.models import *
+import bcrypt
 
 # Create your views here.
 
@@ -67,6 +68,31 @@ def card(request, category_id):
     }
     # print(context)
     return render(request, 'card.html', context)
+
+def login(request):
+    return render(request, 'login.html')
+
+def adLogin(request):
+    hash= bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt()).decode()
+    if bcrypt.checkpw('root'.encode(), hash.encode()):
+        request.session['sesh']= hash
+        print('ENCODE: ' + str(hash.encode()))
+        print('PLAIN: ' + str(hash))
+        print('In SESH: ' + str(request.session['sesh']))
+        return redirect(categories)
+    else:
+        return redirect(login)
+
+def logout(request):
+    if 'sesh' in request.session:
+        del request.session['sesh']
+        return redirect(login)
+    else:
+        return redirect(categories)
+
+def delete(request, card_id):
+    Card.objects.get(id=card_id).delete()
+    return redirect(categories)
 
 def getCategoryCards(request, category_id):
     cards= Card.objects.filter(category= category_id)

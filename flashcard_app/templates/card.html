@@ -25,6 +25,10 @@
         </div>
 
         <div class="card-container">
+
+            {% if 'sesh' in request.session %}
+                <a id="delete_card" href=""><button>X</button></a>
+            {% endif %}
             <div class="card" id="card">
                 <div class="front">
                     <h1 id="h1_question"></h1>
