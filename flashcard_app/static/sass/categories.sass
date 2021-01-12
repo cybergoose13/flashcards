@@ -1,15 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400;1,900&display=swap')
-    
-// *
-//     overflow: hidden
+
 
 html body
     margin: 0 auto
     padding: 0
     background: rgb(0, 0, 0)
 
-// h1
-//     height: 25%
 
 .container
     padding-top: .8em
@@ -17,18 +13,20 @@ html body
     height: 100vh
     background: smokewhite
     background: linear-gradient(320deg, rgba(3,4,3,1) 10%, rgba(75,163,121,1) 100%)
-    // background: linear-gradient(320deg, rgba(whitesmoke, 1) 5%, rgba(75,163,121,1) 100%)
+
 
 .header
     margin: 0 auto
     text-align: center
     height: fit-content
 
+
 .header > h1:not(#title)
     font-family: 'Lato', 'sans-serif'
     color: whitesmoke
     text-decoration: underline
     font-size: 2.1em
+
 
 .cat-container
     text-align: center
@@ -37,14 +35,12 @@ html body
     justify-content: center
     height: fit-content
 
+
 .cat-container > h1
     font-size: 2.5em
-    // color: #fff
-    // -webkit-animation: glow 1s ease-in-out infinite alternate
-    // -moz-animation: glow 1s ease-in-out infinite alternate
-    // animation: glow 1s ease-in-out infinite alternate
     top: 50%
     transform: translateY(-50%)
+
 
 .cat-card
     display: grid
@@ -60,23 +56,28 @@ html body
     flex: 1 1 150px
     flex: 0 1 150px
 
+
 .cat-card > h4
     margin: .8em auto
     font-family: 'Lato', 'sans-serif'
+
 
 .cat-card > p
     margin: 0 auto
     font-family: 'Lato', 'sans-serif'
     text-align: start
 
+
+.cat-card:hover
+    cursor: pointer
+
+
 #title
     font-family: 'Lato', 'sans-serif'
     font-weight: 900
     -webkit-text-stroke: white 2px
     font-size: 4em
+    
 
-// @keyframes glow
-//     0%
-//         text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073, 0 0 20px #e60073, 0 0 25px #e60073, 0 0 30px #e60073, 0 0 35px #e60073
-//     100%
-//         text-shadow: 0 0 10px #fff, 0 0 15px #ff4da6, 0 0 20px #ff4da6, 0 0 25px #ff4da6, 0 0 30px #ff4da6, 0 0 35px #ff4da6, 0 0 40px #ff4da6
+#title:hover
+    cursor: pointer

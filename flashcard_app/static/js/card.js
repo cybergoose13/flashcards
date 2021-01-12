@@ -16,10 +16,6 @@ $(document).ready(function name(params) {
     })
 });
 
-$(document).on('click', '.title', function (params) {
-    window.location.replace('/')
-})
-
 $(document).on('click', '.card',function (params) {
     getRotation(true) 
 });

@@ -51,6 +51,7 @@ input[type=text] {
   font-weight: 900;
   font-size: 4em;
   -webkit-text-stroke: white 2px;
+  cursor: pointer;
 }
 
 .header > #sub {

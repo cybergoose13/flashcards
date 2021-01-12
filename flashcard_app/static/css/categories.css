@@ -66,11 +66,19 @@ html body {
   text-align: start;
 }
 
+.cat-card:hover {
+  cursor: pointer;
+}
+
 #title {
   font-family: "Lato", "sans-serif";
   font-weight: 900;
   -webkit-text-stroke: white 2px;
   font-size: 4em;
+}
+
+#title:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=categories.css.map */

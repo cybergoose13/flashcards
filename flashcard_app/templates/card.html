@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card</title>
+    <!-- Imports -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {% load static %}
+    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/card.css' %}">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    <!-- creates const with value of the passed in context from views -->
+    <!-- JS -->
+    <script type="text/javascript" src="{% static 'js/title.js' %}"></script>
+    <!-- Set JS CONST 'cat' to value of imported python deck category 'deck_cat'-->
     <script>
         const cat= "{{deck_cat}}"
     </script>
-
     <script type="text/javascript" src="{% static 'js/card.js' %}"></script>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1 class="title">Flash Cards</h1>
+            <h1 class="title" id="title">Flash Cards</h1>
             <h1 class="sub">{{deck_cat}}</h1>
         </div>
 
         <div class="card-container">
 
             {% if 'sesh' in request.session %}
-                <a id="delete_card" href=""><button>X</button></a>
+                <a id="delete_card" href=""><button class="btn btn-danger">X</button></a>
             {% endif %}
             <div class="card" id="card">
                 <div class="front">

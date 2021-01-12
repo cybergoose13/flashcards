@@ -1,13 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400;1,900&display=swap");
-body html {
+html body {
   margin: 0 auto;
   padding: 0;
   width: 100vw;
   height: 100vh;
-}
-
-body {
-  background: black;
+  background-color: black;
 }
 
 .container {
@@ -37,6 +34,10 @@ body {
   font-family: "Lato", "sans-serif";
   text-decoration: underline;
   color: whitesmoke;
+}
+
+.title:hover {
+  cursor: pointer;
 }
 
 .card-container {

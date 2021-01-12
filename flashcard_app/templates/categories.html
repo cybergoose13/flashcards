@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catagories</title>
+    <!-- Imports -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {% load static %}
-    <script type="text/javascript" src="{% static 'js/categories.js' %}"></script>
+    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/categories.css' %}">
+    <!-- JS -->
+    <script type="text/javascript" src="{% static 'js/title.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/categories.js' %}"></script>
 </head>
 <body>
     <div class="container">
@@ -22,7 +26,6 @@
             {% else %}
             {% for cat, v in card_dict.items %}
             <div class="cat-card" id="{{cat}}">
-                {% comment %} <a href="card/{{cat}}">{{cat|title}}</a> {% endcomment %}
                 <h4>{{cat|title}}</h4>
                 <p style="margin-left:50px;"># of cards: {{v}}</p>
             </div>

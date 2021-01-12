@@ -61,6 +61,10 @@ html body {
   animation: wiggle 2s infinite;
 }
 
+.box:hover {
+  cursor: pointer;
+}
+
 .box > h3 {
   font-family: Lato, sans-serif;
   font-weight: 400;
