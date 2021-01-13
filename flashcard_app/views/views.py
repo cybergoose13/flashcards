@@ -88,6 +88,8 @@ def logout(request):
         return redirect(categories)
 
 def delete(request, card_id):
+    if 'sesh' not in request.session:
+        return redirect(index)
     Card.objects.get(id=card_id).delete()
     return redirect(categories)
 
